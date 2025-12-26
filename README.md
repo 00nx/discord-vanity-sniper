@@ -6,7 +6,6 @@
 <p align="center">
 <img src="https://img.shields.io/github/stars/00nx/discord-vanity-sniper?style=social" alt="Stars"> &nbsp;
 <img src="https://img.shields.io/github/forks/00nx/discord-vanity-sniper?style=social" alt="Forks"> &nbsp;
-<img src="https://img.shields.io/github/commit-activity/m/00nx/discord-vanity-sniper" alt="Commits"> &nbsp;
 <img src="https://img.shields.io/github/license/00nx/discord-vanity-sniper" alt="License"> &nbsp;
 <img src="https://img.shields.io/github/last-commit/00nx/discord-vanity-sniper" alt="Last Commit">
 </p>
