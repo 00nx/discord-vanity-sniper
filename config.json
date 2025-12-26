@@ -1,0 +1,7 @@
+{
+  "claimToken": "your_claimtoken",
+  "monitorToken":"your_monitortoken",
+  "mfa_password": "your_token_password",
+  "hook": "your_webhook",
+  "leave_after_claim": true
+}
