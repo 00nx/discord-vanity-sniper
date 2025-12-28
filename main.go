@@ -1,7 +1,4 @@
-/*
-   Author: aswin / @github.com/00nx
-   Date: 12-26-2025
-*/
+
 
 
 
@@ -1144,3 +1141,4 @@ func main() {
     fmt.Println("Sessions closed. exiting ts")
     sniper.Close()
 }
+
