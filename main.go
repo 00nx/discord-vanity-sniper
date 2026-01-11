@@ -63,24 +63,24 @@ var payloadPool = sync.Pool{
 
 
 var (
-	client = &fasthttp.Client{
-		TLSConfig: &tls.Config{
-			InsecureSkipVerify:    true, 
-			SessionTicketsDisabled: false,
-			ClientSessionCache:     tls.NewLRUClientSessionCache(1000),
-		},
-		MaxConnsPerHost:               1000,
-		MaxIdleConnDuration:           15 * time.Second,
-		MaxConnDuration:               30 * time.Second,
-		ReadTimeout:                   5 * time.Second, 
-		WriteTimeout:                  5 * time.Second, 
-		MaxResponseBodySize:           1 * 1024 * 1024, 
-		Name:                          "goclaimer/3.0",
-		NoDefaultUserAgentHeader:      true,
-		DisableHeaderNamesNormalizing: true,
-		DisablePathNormalizing:        true,
-        
-	}
+    monitorClient = &fasthttp.Client{ /* same settings but smaller conn pool */ 
+        MaxConnsPerHost:           64,
+        MaxIdleConnDuration:       20 * time.Second,
+        MaxConnDuration:           45 * time.Second,
+        ReadTimeout:               4 * time.Second,
+        WriteTimeout:              4 * time.Second,
+        MaxResponseBodySize:       512 * 1024,
+    }
+
+    claimClient = &fasthttp.Client{ // more aggressive
+        MaxConnsPerHost:           200,
+        MaxIdleConnDuration:       10 * time.Second,
+        MaxConnDuration:           25 * time.Second,
+        ReadTimeout:               1500 * time.Millisecond,
+        WriteTimeout:              1500 * time.Millisecond,
+        MaxResponseBodySize:       256 * 1024,
+        NoDefaultUserAgentHeader:  true,
+    }
 )
 
 
@@ -1141,4 +1141,5 @@ func main() {
     fmt.Println("Sessions closed. exiting ts")
     sniper.Close()
 }
+
 
