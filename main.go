@@ -63,7 +63,7 @@ var payloadPool = sync.Pool{
 
 
 var (
-    monitorClient = &fasthttp.Client{ /* same settings but smaller conn pool */ 
+    monitorClient = &fasthttp.Client{ 
         MaxConnsPerHost:           64,
         MaxIdleConnDuration:       20 * time.Second,
         MaxConnDuration:           45 * time.Second,
@@ -72,7 +72,7 @@ var (
         MaxResponseBodySize:       512 * 1024,
     }
 
-    claimClient = &fasthttp.Client{ // more aggressive
+    claimClient = &fasthttp.Client{ 
         MaxConnsPerHost:           200,
         MaxIdleConnDuration:       10 * time.Second,
         MaxConnDuration:           25 * time.Second,
@@ -1141,5 +1141,6 @@ func main() {
     fmt.Println("Sessions closed. exiting ts")
     sniper.Close()
 }
+
 
 
