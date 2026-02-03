@@ -47,6 +47,8 @@ Provided for **educational purposes only**.
    ```
 
 
+## note
 
+> *for faster speed, use a vps/rdp close to Ashburn/virginia or NYC because this tool uses us-east1 gateway*
 
 
